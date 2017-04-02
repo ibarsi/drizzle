@@ -1,0 +1,22 @@
+{
+  "name": "drizzle",
+  "version": "1.0.0",
+  "description": "A bot that Tweets out daily Drake lyrics.",
+  "main": "main/index.js",
+  "scripts": {
+    "start": "node main/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ibarsi/drizzle.git"
+  },
+  "author": "Igor Barsi <ibarsi92@gmail.com> (https://github.com/ibarsi)",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/ibarsi/drizzle#readme",
+  "dependencies": {
+    "cheerio": "0.22.0",
+    "isomorphic-fetch": "2.2.1",
+    "twit": "2.2.5",
+    "winston": "2.3.1"
+  }
+}
