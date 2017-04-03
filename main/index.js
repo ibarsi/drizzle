@@ -10,13 +10,23 @@ const { Auth } = require('../config.json');
 const genius = Genius();
 const twitter = new Twitter(Auth.Twitter);
 
+logger.info('=== START ===');
+
 genius.getSongsByArtistId(GENIUS_ARTISTS.DRAKE)
     .then(songs => {
+        if (!songs || !songs.length) { return; }
+
+        logger.info(`Songs found: ${ songs.length }`);
+
         const random_song = songs[ Math.floor(Math.random() * songs.length) ];
 
         return genius.getSongById(random_song.id);
     })
     .then((song = {}) => {
+        if (!song) { return; }
+
+        logger.info(`Song picked: ${ song.full_title }`);
+
         const { primary_artist = {}, featured_artists = [], fact_track: { external_url } = {} } = song;
 
         const artist = [ ...featured_artists, primary_artist ]
@@ -24,6 +34,8 @@ genius.getSongsByArtistId(GENIUS_ARTISTS.DRAKE)
 
         return genius.getLyricsBySong(song)
             .then(lyrics => {
+                if (!lyrics) { return; }
+
                 const artist_lyrics = genius.filterLyricsByArtist(lyrics, artist);
 
                 const pair_bar_indexes = [
@@ -41,11 +53,13 @@ genius.getSongsByArtistId(GENIUS_ARTISTS.DRAKE)
     .then(tweet => {
         if (!tweet) { return; }
 
+        logger.info(`Tweet: ${ tweet }`);
+
         twitter.post('statuses/update', { status: tweet },
             error => {
-                if (error) { console.error(error) }
+                if (error) { logger.error(error) }
+
+                logger.info(`Tweet sent successfully!`);
             });
     })
     .catch(logger.error);
-
-
