@@ -1,10 +1,6 @@
 {
     "presets": [
-        ["env", {
-            "targets": {
-                "node": 4.6
-            }
-        }]
+        "latest-minimal"
     ],
     "sourceMaps": true,
     "retainLines": true
