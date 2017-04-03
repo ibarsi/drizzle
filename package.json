@@ -2,12 +2,9 @@
   "name": "drizzle",
   "version": "1.0.2",
   "description": "A bot that Tweets out daily Drake lyrics.",
-  "main": "dist/index.js",
+  "main": "main/index.js",
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "npm run clean && babel main/ -s -D -d dist/",
-    "debug": "npm run build && node --debug=12345 dist/index.js",
-    "start": "node dist/index.js"
+    "start": "node main/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +18,5 @@
     "isomorphic-fetch": "2.2.1",
     "twit": "2.2.5",
     "winston": "2.3.1"
-  },
-  "devDependencies": {
-    "babel-cli": "6.24.0",
-    "babel-preset-latest-minimal": "1.1.2"
   }
 }
