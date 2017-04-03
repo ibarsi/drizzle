@@ -34,5 +34,6 @@ def deploy():
         run('git checkout tags/{0}'.format(tag))
         run('npm prune')
         run('npm install')
+        run('npm run build')
 
     print 'Successfully deployed version {0}'.format(default_tag)
