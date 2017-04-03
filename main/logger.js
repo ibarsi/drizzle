@@ -8,7 +8,7 @@ const winston_logger = new winston.Logger({
 
 module.exports = {
     info(message) {
-        if (process.env.NODE_ENV === 'PROD') {
+        if (process.env.NODE_ENV === 'production') {
             winston_logger.info(message);
         }
         else {
@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     error(message) {
-        if (process.env.NODE_ENV === 'PROD') {
+        if (process.env.NODE_ENV === 'production') {
             winston_logger.error(message);
         }
         else {
