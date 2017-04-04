@@ -46,12 +46,12 @@ logger.info('=== START ===');
 
         logger.info(`Tweet: ${ tweet }`);
 
-        // twitter.post('statuses/update', { status: tweet },
-        //     error => {
-        //         if (error) { logger.error(error) }
+        twitter.post('statuses/update', { status: tweet },
+            error => {
+                if (error) { logger.error(error) }
 
-        //         logger.info(`Tweet sent successfully!`);
-        //     });
+                logger.info(`Tweet sent successfully!`);
+            });
     } catch (error) {
         logger.error(error);
     }
