@@ -5,7 +5,7 @@
 require('isomorphic-fetch');
 const cheerio = require('cheerio');
 
-const config = require('../config.json');
+const { AUTH } = require('../config.json');
 
 const apis = {
     songs_by_artist: 'https://api.genius.com/artists/{artist}/songs?sort=popularity&page=1&per_page=50',
@@ -14,7 +14,7 @@ const apis = {
 
 const headers = new Headers({
     Accept: 'application/json',
-    Authorization: `Bearer ${ config.Auth.Genius.access_token }`
+    Authorization: `Bearer ${ AUTH.Genius.access_token }`
 });
 
 const GENIUS_ARTISTS = {

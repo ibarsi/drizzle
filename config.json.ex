@@ -1,5 +1,6 @@
 {
-    "Auth": {
+    "MAX_RETRY_COUNT": 0,
+    "AUTH": {
         "Twitter": {
             "consumer_key": "",
             "consumer_secret": "",
