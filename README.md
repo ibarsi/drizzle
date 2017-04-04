@@ -4,7 +4,7 @@
 
 This Node script makes authorized requests to the [Genius API](https://docs.genius.com/) to pull the currently highest rated Drake songs by popularity. It then selects a random song, filtering out all featuring artists' lyrics to ensure we focus only on the 6 God's words, and selects 2 random bars. The API's response is also scraped for a Spotify link, which (if found) is appended to the end of the lyrics selected. The result is then sent out as a Tweet to the bot account defined in the script.
 
-<img src="./example-tweet.png" alt="Screenshot of example tweet sent by bot" style="width: 500px;"/>
+![Screenshot of example tweet sent by bot](./example-tweet.png)
 
 ## LOCAL SETUP ##
 
