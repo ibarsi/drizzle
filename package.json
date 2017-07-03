@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/ibarsi/drizzle.git"
+    "url": "git@github.com:ibarsi/drizzle.git"
   },
   "author": "Igor Barsi <ibarsi92@gmail.com> (https://github.com/ibarsi)",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/ibarsi/drizzle#readme",
+  "homepage": "https://github.com/ibarsi/drizzle/blob/master/README.md",
   "dependencies": {
     "cheerio": "0.22.0",
     "isomorphic-fetch": "2.2.1",

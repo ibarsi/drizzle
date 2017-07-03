@@ -1,3 +1,7 @@
+/* -------------------------------------------------------
+    LOGGER
+-------------------------------------------------------- */
+
 const winston = require('winston');
 
 const winston_logger = new winston.Logger({
